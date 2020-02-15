@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Python 3: New Features</title>
+<link rel="stylesheet" href="css/reveal.css"/>
+<link rel="stylesheet" href="css/theme/solarized.css"/>
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css"/>
+</head>
+<body>
+<div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+    <h1>Python 3</h1>
+    <h2>New Features</h2>
+    </section>
+
+    <section>
+      <h2>Advanced Unpacking</h2>
+      <p>Python 2</p>
+      <pre><code class="python" data-trim data-noescape>
+>>> first, second, _, _, _ = range(5)
+</code></pre>
+<p>Python 3</p>
+<pre><code class="python" data-trim data-noescape>
+>>> first, second , *_ = range(5)  # python 3
+>>> first, *_, last = range(5)  # python 3
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Print Function</h2>
+      <p>Additional arguments, e.g. <code>sep & end.</code> </p>
+      <pre><code class="python" data-trim data-noescape>
+>>> print('hello', 'world', sep='.')
+hello.world
+>>> print('hello', end=' '); print('world')
+hello world
+</code></pre>
+    </section>
+
+
+    <section>
+      <h2>Division now float by default</h2>
+      <pre><code class="python" data-trim data-noescape>
+>>> 1 / 2
+0.5
+>>> 1 // 2  # // access integer division
+0
+</code></pre>
+    </section>
+
+    <section>
+      <h2><code class="python" data-trim data-noescape>Recursive option in glob</code></h2>
+      <pre><code class="python" data-trim data-noescape>
+>>> import os
+>>> import glob
+>>> glob.glob(os.path.join('data', '**', '*.fits'), recursive=True)
+['data/image.fits', 'data/subset1/a.fits', 'data/subset1/b.fits',
+ 'data/subset1/c.fits', 'data/subset2/d.fits', 'data/subset2/e.fits']
+    </code></pre>
+    </section>
+
+    <section>
+      <h1>Libraries</h1>
+    </section>
+
+    <section>
+      <h2>Numpy 1.10: @ performs matrix multiplication</h2>
+      <pre><code class="python" data-trim data-noescape>
+>>> import numpy as np
+>>> x = np.array([[1, 2], [3, 4]])
+>>> y = np.array([[3, 2], [2, -1]])
+>>> x @ y
+array([[ 7,  0],
+       [17,  2]])
+     </code></pre>
+    </section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="reveal-init.js"></script>
+
+</body>
+</html>
