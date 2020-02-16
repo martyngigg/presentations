@@ -18,6 +18,17 @@
     </section>
 
     <section>
+      <h2>Print Function</h2>
+      <p>Additional arguments, e.g. <code>sep & end</code> </p>
+      <pre><code class="python" data-trim data-noescape>
+>>> print('hello', 'world', sep='.')
+hello.world
+>>> print('hello', end=' '); print('world')
+hello world
+</code></pre>
+    </section>
+
+    <section>
       <h2>Advanced Unpacking</h2>
       <p>Python 2</p>
       <pre><code class="python" data-trim data-noescape>
@@ -31,18 +42,6 @@
     </section>
 
     <section>
-      <h2>Print Function</h2>
-      <p>Additional arguments, e.g. <code>sep & end.</code> </p>
-      <pre><code class="python" data-trim data-noescape>
->>> print('hello', 'world', sep='.')
-hello.world
->>> print('hello', end=' '); print('world')
-hello world
-</code></pre>
-    </section>
-
-
-    <section>
       <h2>Division now float by default</h2>
       <pre><code class="python" data-trim data-noescape>
 >>> 1 / 2
@@ -50,6 +49,65 @@ hello world
 >>> 1 // 2  # // access integer division
 0
 </code></pre>
+    </section>
+
+    <section>
+      <h2>Keyword-Only Arguments</h2>
+      <p>Keywords allowed after *varargs</p>
+      <pre><code class="python" data-trim data-noescape>
+def sortwords(*wordlist, case_sensitive=False):
+   ...
+</code></pre>
+<p>Leave out varargs name to end positional parameters.</p>
+<pre><code class="python" data-trim data-noescape>
+>>> def sub(x, y, *, reverse):
+...     pass
+>>> sub(1,2,True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: sub() takes 2 positional arguments but 3 were given.
+</code></pre>
+<p><code>reverse</code> must be given as a keyword</p>
+    </section>
+
+    <section>
+      <h2>Exception Chaining</h2>
+      <p>Additional syntacx with raise to give more context</p>
+      <pre><code class="python" data-trim data-noescape>
+>>> try:
+...     print(1 / 0)
+... except Exception as exc:
+...     raise RuntimeError("Something bad happened") from exc
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+ZeroDivisionError: division by zero
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+RuntimeError: Something bad happened
+</code></pre>
+    </section>
+
+    <section>
+      <h2><code>super()</code> without args</h2>
+      <pre><code class="python" data-trim data-noescape>
+class C(B):
+    def __init__(self, x):
+        super().__init__(x)
+      </code></pre>
+    </section>
+
+    <section>
+      <p>Underscores in numbers <pre><code class="python" data-trim data-noescape>
+          >>> a = 1_000_000_000
+      </pre></code></p>
+    </section>
+
+    <section>
+      <h1>Libraries</h1>
     </section>
 
     <section>
@@ -64,10 +122,6 @@ hello world
     </section>
 
     <section>
-      <h1>Libraries</h1>
-    </section>
-
-    <section>
       <h2>Numpy 1.10: @ performs matrix multiplication</h2>
       <pre><code class="python" data-trim data-noescape>
 >>> import numpy as np
@@ -77,6 +131,11 @@ hello world
 array([[ 7,  0],
        [17,  2]])
      </code></pre>
+    </section>
+
+    <section>
+      <h2>END</h2>
+      <p>https://docs.python.org/3/whatsnew/3.0.html</p>
     </section>
 
   </div>
