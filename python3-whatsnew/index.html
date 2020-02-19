@@ -29,6 +29,27 @@ hello world
     </section>
 
     <section>
+      <h2>String Interpolation: f-strings</h2>
+      <p>Pre python 3.6</p>
+      <pre><code class="python" data-trim data-noescape>
+>>> value = 4 * 20
+>>> 'The value is {value}.'.format(value=value)
+ 'The value is 80.'
+      </code></pre>
+      <p>Python >= 3.6</p>
+      <pre><code class="python" data-trim data-noescape>
+>>> value = 4 * 20
+>>> f'The value is {value}.'
+ 'The value is 80.'
+      </code></pre>
+      <p>Braces can contain any expressions</p>
+      <pre><code class="python" data-trim data-noescape>
+>>> f'The value is {4 * 20}.'
+ 'The value is 80.'
+      </code></pre>
+    </section>
+
+    <section>
       <h2>Advanced Unpacking</h2>
       <p>Python 2</p>
       <pre><code class="python" data-trim data-noescape>
