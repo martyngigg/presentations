@@ -7,6 +7,15 @@
 <link rel="stylesheet" href="css/theme/solarized.css"/>
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css"/>
+
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
 </head>
 <body>
 <div class="reveal">
@@ -93,7 +102,7 @@ TypeError: sub() takes 2 positional arguments but 3 were given.
 
     <section>
       <h2>Exception Chaining</h2>
-      <p>Additional syntacx with raise to give more context</p>
+      <p>Additional syntax with raise to give more context</p>
       <pre><code class="python" data-trim data-noescape>
 >>> try:
 ...     print(1 / 0)
